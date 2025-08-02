@@ -1,0 +1,70 @@
+{% extends 'base_template.html' %}
+{% load static %}
+
+{% block title %}Termina tu registro{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/usuarios.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container registro">
+
+    <!-- Título superior -->
+    <h4 class="subtitle">Termina de registrarte</h4>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Nombre legal -->
+        <label class="form-label">Nombre legal</label>
+        <input type="text" name="first_name" placeholder="Nombre que aparece en tu identificación" required>
+        <input type="text" name="last_name" placeholder="Apellidos que aparecen en tu identificación" required>
+        <p class="hint-text">
+            Asegúrate de que coincida con el nombre que aparece en tu identificación oficial.
+            Si usas otro distinto, puedes agregar el <a href="#">nombre que prefieras</a>.
+        </p>
+
+        <!-- Fecha de nacimiento -->
+        <label class="form-label">Fecha de nacimiento</label>
+        <input type="date" name="birth_date" required>
+        <p class="hint-text">
+            Debes tener al menos 18 años para registrarte. No compartiremos tu fecha de nacimiento con ningún otro usuario.
+        </p>
+
+        <!-- Información de contacto -->
+        <label class="form-label">Información de contacto</label>
+        <input type="email" name="email" value="{{ email }}" readonly>
+        <p class="hint-text">
+            Te enviaremos las confirmaciones de viaje y los recibos por correo electrónico.
+        </p>
+
+        <!-- Contraseña -->
+        <label class="form-label">Contraseña</label>
+        <div class="password-container">
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="button" class="show-pass">Mostrar</button>
+        </div>
+
+        <!-- Términos -->
+        <p class="terms-text">
+            Al seleccionar <b>Aceptar y continuar</b>, aceptas los 
+            <a href="#">Términos del servicio</a>, los 
+            <a href="#">Términos de Pago del Servicio</a> y la 
+            <a href="#">Política contra la discriminación</a>, así como su 
+            <a href="#">Política de privacidad</a>.
+        </p>
+
+        <!-- Botón principal -->
+        <button type="submit" class="btn-principal">Aceptar y continuar</button>
+
+        <!-- Opción de no recibir promociones -->
+        <div class="no-promos">
+            <input type="checkbox" id="no_promos" name="no_promos">
+            <label for="no_promos">No quiero recibir mensajes promocionales de Airbnb.</label>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+  

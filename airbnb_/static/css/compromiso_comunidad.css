@@ -1,0 +1,94 @@
+/* === Pantalla de Compromiso con la Comunidad === */
+
+body {
+    background: #f7f7f7;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.compromiso-card {
+    background: white;
+    max-width: 480px;
+    width: 100%;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.compromiso-card img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.compromiso-card h2 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.compromiso-card h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.compromiso-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Contenedor de botones */
+.compromiso-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Botón de aceptar */
+.btn-aceptar {
+    background: #ff385c;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease-in-out;
+}
+
+.btn-aceptar:hover {
+    background: #e03150;
+}
+
+/* Botón de rechazar (enlace estilizado) */
+.btn-rechazar {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background: white;
+    transition: background 0.2s ease-in-out;
+}
+
+.btn-rechazar:hover {
+    background: #f7f7f7;
+}

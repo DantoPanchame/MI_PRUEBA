@@ -1,0 +1,62 @@
+{% extends 'base_template.html' %}
+{% load static %}
+
+{% block title %}Iniciar sesión{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/usuarios.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+
+    <!-- Título -->
+    <h2>Bienvenido de nuevo</h2>
+    <p class="hint-text">Inicia sesión para continuar</p>
+
+    <!-- Si hay error, mostrarlo -->
+    {% if error %}
+    <p style="color: red; font-weight: bold;">{{ error }}</p>
+    {% endif %}
+
+    <!-- Formulario -->
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Correo bloqueado -->
+        <label class="form-label">Correo electrónico</label>
+        <input type="email" name="email" value="{{ email }}" readonly>
+
+        <!-- Contraseña -->
+        <label class="form-label">Contraseña</label>
+        <div class="password-container">
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="button" class="show-pass">Mostrar</button>
+        </div>
+
+        <!-- Olvidaste tu contraseña -->
+        <p class="hint-text">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </p>
+
+        <!-- Botón principal -->
+        <button type="submit" class="btn-principal">Continuar</button>
+    </form>
+
+    <!-- Separador -->
+    <div class="divider"><span>o</span></div>
+
+    <!-- Botones alternativos (SOLO visuales) -->
+    <div class="alt-login">
+        <button class="btn-alt"><span>🌐</span> Continuar con Google</button>
+        <button class="btn-alt"><span>🍏</span> Continuar con Apple</button>
+        <button class="btn-alt"><span>📱</span> Continuar con teléfono</button>
+        <button class="btn-alt"><span>📘</span> Continuar con Facebook</button>
+    </div>
+
+    <!-- Cambiar de cuenta -->
+    <p style="margin-top: 10px;">
+        <a href="/usuarios/email/">¿No eres tú? Usar otra cuenta</a>
+    </p>
+</div>
+{% endblock %}

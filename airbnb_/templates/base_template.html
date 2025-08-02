@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Airbnb Clone{% endblock %}</title>
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+{% block content %}{% endblock %}
+
+<!-- JS global -->
+{% block extra_js %}{% endblock %}
+</body>
+</html>

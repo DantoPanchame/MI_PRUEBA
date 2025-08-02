@@ -1,0 +1,31 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<h1>Inicia sesión o regístrate</h1>
+<h2>¡Te damos la bienvenida a Airbnb!</h2>
+
+<div class="region-selector">
+    <label>Plan/Región</label>
+    <select disabled>
+        <option>Honduras (-504)</option>
+    </select>
+</div>
+
+<form method="post" action="{% url 'usuarios:verificar_email' %}">
+    {% csrf_token %}
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <p class="disclaimer">
+        La empresa configurará el número por teléfono o mensaje de texto. 
+        Sujeto a tarifas estándar para mensajes y datos.
+    </p>
+    <button type="submit">Continuar con correo electrónico</button>
+</form>
+
+<!-- Opciones deshabilitadas -->
+<div class="disabled-options">
+    <span>o</span>
+    <button disabled>Continuar con Google</button>
+    <button disabled>Continuar con Apple</button>
+    <button disabled>Continuar con Facebook</button>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base_template.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login_metodo.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Inicia sesión o regístrate</h2>
+        <p class="subtitle">Elige un método para continuar</p>
+
+        <!-- Campo de teléfono (solo visual) -->
+        <div class="phone-box">
+            <select disabled>
+                <option selected>Honduras (+504)</option>
+            </select>
+            <input type="text" placeholder="Número telefónico" disabled>
+            <small>
+                Te vamos a confirmar el número por teléfono o mensaje de texto. 
+                Sujeto a tarifas estándar para mensajes y datos. 
+                <a href="#">Política de privacidad</a>
+            </small>
+            <button class="disabled-btn" disabled>Continuar</button>
+        </div>
+
+        <div class="divider">
+            <span></span>
+            <p>o</p>
+            <span></span>
+        </div>
+
+        <!-- Botones de login -->
+        <div class="login-options">
+            <button class="disabled-btn">
+                <span class="icon">🔵</span> Continuar con Google
+            </button>
+            <button class="disabled-btn">
+                <span class="icon">🍏</span> Continuar con Apple
+            </button>
+
+            <!-- ✅ Este sí funciona -->
+            <a class="active-btn" href="{% url 'usuarios:ingresar_email' %}">
+                <span class="icon">📧</span> Continuar con correo electrónico
+            </a>
+
+            <button class="disabled-btn">
+                <span class="icon">📘</span> Continuar con Facebook
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

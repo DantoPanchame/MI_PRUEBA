@@ -1,0 +1,151 @@
+body {
+    background: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    color: #222;
+}
+
+/* Centrado general */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Caja principal */
+.login-box {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    width: 380px;
+    text-align: center;
+    border: 1px solid #e6e6e6; /* más sutil que la sombra */
+}
+
+/* Títulos */
+.login-box h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Teléfono deshabilitado */
+.phone-box {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.phone-box select,
+.phone-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fff; /* Airbnb no usa fondo gris aquí */
+    color: #666;
+    font-size: 14px;
+}
+
+.phone-box small {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.phone-box a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.phone-box a:hover {
+    text-decoration: underline;
+}
+
+/* Botón principal (deshabilitado) */
+.disabled-btn {
+    background: #FF385C;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ✅ Botón activo para continuar con correo */
+.active-btn {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    margin-top: 12px;
+    transition: background 0.2s ease;
+}
+
+.active-btn:hover {
+    background: #f8f8f8;
+}
+
+.active-btn .icon,
+.disabled-btn .icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Botones secundarios */
+.login-options button,
+.login-options a {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+/* Divider estilo Airbnb */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+.divider p {
+    position: absolute;
+    background: #fff;
+    padding: 0 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Hover general para botones secundarios */
+.login-options button:hover,
+.login-options a:hover {
+    background: #f8f8f8;
+}
+
+
+
+/*######################################################################*/

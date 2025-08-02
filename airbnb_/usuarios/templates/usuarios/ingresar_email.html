@@ -1,0 +1,32 @@
+{% extends 'base_template.html' %}
+{% load static %}
+
+{% block title %}Ingresar correo{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/usuarios.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h4>Inicia sesión o regístrate</h4>
+    <h1>¡Te damos la bienvenida a Airbnb!</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <button type="submit" class="btn-principal">Continuar</button>
+    </form>
+
+    <!-- Separador con “o” -->
+    <div class="divider"><span>o</span></div>
+
+    <!-- Botones alternativos -->
+    <div class="alt-login">
+        <button class="btn-alt"><span>🌐</span> Continuar con Google</button>
+        <button class="btn-alt"><span>🍏</span> Continuar con Apple</button>
+        <button class="btn-alt"><span>📱</span> Continuar con el número de teléfono</button>
+        <button class="btn-alt"><span>📘</span> Continuar con Facebook</button>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base_template.html' %}
+{% load static %}
+
+{% block title %}Compromiso con la comunidad{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/compromiso_comunidad.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="compromiso-card">
+    
+    <!-- Logo -->
+    <div class="logo-container">
+    <img src="{% static 'img/airbnb_logo.png' %}" alt="Airbnb Logo" class="logo">
+    </div>
+
+    <!-- Texto principal -->
+    <h2>Nuestro compromiso de la comunidad</h2>
+    <h1>Airbnb es una comunidad donde cualquier persona puede sentirse como en casa donde vaya</h1>
+
+    <p>Para asegurarnos de que sea así, te pedimos que te comprometas a lo siguiente:</p>
+    <p class="descripcion">
+        Todos merecemos que nos respeten y traten sin prejuicios, sin importar el color de nuestra piel, 
+        la religión, la nacionalidad, la etnia, el sexo, la identidad de género, la orientación sexual, 
+        la edad o si tenemos una discapacidad.
+    </p>
+
+    <!-- Botones -->
+    <div class="compromiso-botones">
+        <!-- ✅ Botón para Aceptar -->
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn-aceptar" type="submit">Aceptar y continuar</button>
+        </form>
+
+        <!-- ✅ Botón para Rechazar como <a> -->
+        <a href="{% url 'usuarios:login_metodo' %}" class="btn-rechazar">Rechazar</a>
+    </div>
+</div>
+{% endblock %}
